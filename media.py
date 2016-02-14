@@ -17,6 +17,7 @@ class Media():
         self.trailer_youtube_url = trailer_url
         self.release_date = release_date
 
+    # pulls the youtube id from a youtube link
     def getYouTubeId(self):
         youtube_id_match = re.search(
             r'(?<=v=)[^&#]+', self.trailer_youtube_url)
@@ -24,7 +25,8 @@ class Media():
             r'(?<=be/)[^&#]+', self.trailer_youtube_url)
         return (youtube_id_match.group(0) if youtube_id_match
                               else None)
-
+    
+    # uses the tile content template to create a html div for the media object
     def getTileContent(self):
         trailer_youtube_id = self.getYouTubeId()
         description = self.getDescription()
@@ -35,10 +37,10 @@ class Media():
             release_date = self.release_date,
             body = description)
 
+    # get the description of the media object
     def getDescription(self):
         return self.description
             
-
 class Movie(Media):
     def __init__(self, title, description, image, trailer_url, release_date, director):
         Media.__init__(self, title, description, image, trailer_url, release_date)

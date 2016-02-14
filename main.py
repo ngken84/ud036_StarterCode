@@ -1,6 +1,7 @@
 import media
 import fresh_tomatoes
 
+#Define all my favorite movies, games and tv shows
 shawshank = media.Movie("The Shawshank Redemption",
                         "The story of a man sent to Shawshank prison.",
                         "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
@@ -65,7 +66,8 @@ simpsons = media.TelevisionShow("The Simpsons",
 
 
 
-
+#put them all in an array
 movies = [shawshank, gump, walle, kiki, lastofus, chrono_trigger, destiny, seinfeld, simpsons]
 
+#pass it to the open_movies_page function
 fresh_tomatoes.open_movies_page(movies)
