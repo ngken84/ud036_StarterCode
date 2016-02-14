@@ -55,10 +55,17 @@ seinfeld = media.TelevisionShow("Seinfeld",
                                 "July 5, 1989",
                                 "NBC")
 
+simpsons = media.TelevisionShow("The Simpsons",
+                                "A cartoon disfunctional family goes on whacky adventures",
+                                "http://cdn.fontmeme.com/images/The-Simpsons-TV-Series.jpg",
+                                "https://www.youtube.com/watch?v=nA4qEX6Cg2w",
+                                "Dec. 17, 1989",
+                                "FOX")
 
 
 
 
-movies = [shawshank, gump, walle, kiki, lastofus, chrono_trigger, destiny, seinfeld]
+
+movies = [shawshank, gump, walle, kiki, lastofus, chrono_trigger, destiny, seinfeld, simpsons]
 
 fresh_tomatoes.open_movies_page(movies)

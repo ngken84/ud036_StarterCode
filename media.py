@@ -27,12 +27,16 @@ class Media():
 
     def getTileContent(self):
         trailer_youtube_id = self.getYouTubeId()
+        description = self.getDescription()
         return Media.tile_content.format(
             movie_title = self.title,
             poster_image_url = self.poster_image_url,
             trailer_youtube_id = trailer_youtube_id,
             release_date = self.release_date,
-            body = self.description)
+            body = description)
+
+    def getDescription(self):
+        return self.description
             
 
 class Movie(Media):
@@ -40,46 +44,27 @@ class Movie(Media):
         Media.__init__(self, title, description, image, trailer_url, release_date)
         self.director = director
 
-    def getTileContent(self):
-        trailer_youtube_id = self.getYouTubeId()
-        description = self.description + " Directed by " + self.director + "."
-        return Media.tile_content.format(
-            movie_title = self.title,
-            poster_image_url = self.poster_image_url,
-            trailer_youtube_id = trailer_youtube_id,
-            release_date = self.release_date,
-            body = description)
-
+    def getDescription(self):
+        return self.description + " Directed by " + self.director + "."
+       
 
 class VideoGame(Media):
     def __init__(self, title, description, image, trailer_url, release_date, developer):
         Media.__init__(self, title, description, image, trailer_url, release_date)
         self.developer = developer
 
-    def getTileContent(self):
-        trailer_youtube_id = self.getYouTubeId()
-        description = self.description + " Developed by " + self.developer + "."
-        return Media.tile_content.format(
-            movie_title = self.title,
-            poster_image_url = self.poster_image_url,
-            trailer_youtube_id = trailer_youtube_id,
-            release_date = self.release_date,
-            body = description)
+    def getDescription(self):
+        return self.description + " Developed by " + self.developer + "."
+    
 
 class TelevisionShow(Media):
     def __init__(self, title, description, image, trailer_url, release_date, network):
         Media.__init__(self, title, description, image, trailer_url, release_date)
         self.network = network
 
-    def getTileContent(self):
-        trailer_youtube_id = self.getYouTubeId()
-        description = self.description + " Aired on " + self.network + "."
-        return Media.tile_content.format(
-            movie_title = self.title,
-            poster_image_url = self.poster_image_url,
-            trailer_youtube_id = trailer_youtube_id,
-            release_date = self.release_date,
-            body = description)
+    def getDescription(self):
+        return self.description + " Aired on " + self.network + "."
+
         
 
 
