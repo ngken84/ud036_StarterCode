@@ -2,13 +2,13 @@ import media
 import fresh_tomatoes
 
 shawshank = media.Movie("The Shawshank Redemption",
-                        "The story of a man sent to Shawshank prison",
+                        "The story of a man sent to Shawshank prison.",
                         "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
                         "https://www.youtube.com/watch?v=6hB3S9bIaco",
                         "Sept. 23, 1994",
                         "Frank Darabont")
 gump = media.Movie("Forrest Gump",
-                   "The story of Forrest Gump",
+                   "The story of Forrest Gump.",
                    "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg",
                    "https://www.youtube.com/watch?v=uPIEn0M8su0",
                    "July 6, 1994",
@@ -20,12 +20,45 @@ walle = media.Movie("Wall-E",
                     "June 27, 2008",
                     "Andrew Stanton")
 kiki = media.Movie("Kiki's Delivery Service",
-                   "Kiki is an apprentice witch trying to make it on her own in a new city",
+                   "Kiki is an apprentice witch trying to make it on her own in a new city.",
                    "https://upload.wikimedia.org/wikipedia/en/0/07/Kiki's_Delivery_Service_(Movie).jpg",
                    "https://www.youtube.com/watch?v=4bG17OYs-GA",
                    "July 29, 1989",
                    "Hayao Miyazaki")
 
-movies = [shawshank, gump, walle, kiki]
+chrono_trigger = media.VideoGame("Chrono Trigger",
+                                 "A group of adventurers use time travel to avert a worldwide disaster.",
+                                 "http://www.videogameauctions.com/wp-content/uploads/2011/02/Chrono-Trigger-Poster.jpg",
+                                 "https://www.youtube.com/watch?v=vVl6Ue9r-Oo",
+                                 "March 11, 1995",
+                                 "Squaresoft")
+
+lastofus = media.VideoGame("The Last of Us",
+                           "A man and a girl attempt to go across country during a zombie outbreak.",
+                           "http://mvpo.us/img/P4502",
+                           "https://www.youtube.com/watch?v=W01L70IGBgE",
+                           "June 14, 2013",
+                           "Naughty Dog")
+
+destiny = media.VideoGame("Destiny",
+                          "In the far distant future, Guardians protect the remnants of humanity from the threats from all corners of the universe.",
+                          "http://ecx.images-amazon.com/images/I/915Cy4YnGKL.jpg",
+                          "https://www.youtube.com/watch?v=9ZyQK6kUdWQ",
+                          "Sept. 15, 2014",
+                          "Bungie")
+
+
+seinfeld = media.TelevisionShow("Seinfeld",
+                                "A show about nothing.",
+                                "http://www.sonypictures.com/tv/seinfeld/assets/images/onesheet.jpg",
+                                "https://www.youtube.com/watch?v=V-9WO6UG7rM",
+                                "July 5, 1989",
+                                "NBC")
+
+
+
+
+
+movies = [shawshank, gump, walle, kiki, lastofus, chrono_trigger, destiny, seinfeld]
 
 fresh_tomatoes.open_movies_page(movies)
