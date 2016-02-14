@@ -1,12 +1,11 @@
 import media
 import fresh_tomatoes
 
-
 shawshank = media.Movie("The Shawshank Redemption",
                         "The story of a man sent to Shawshank prison",
                         "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
                         "https://www.youtube.com/watch?v=6hB3S9bIaco",
-                        "September 23, 1994",
+                        "Sept. 23, 1994",
                         "Frank Darabont")
 gump = media.Movie("Forrest Gump",
                    "The story of Forrest Gump",
@@ -28,4 +27,5 @@ kiki = media.Movie("Kiki's Delivery Service",
                    "Hayao Miyazaki")
 
 movies = [shawshank, gump, walle, kiki]
+
 fresh_tomatoes.open_movies_page(movies)
