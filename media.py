@@ -1,15 +1,18 @@
 import re
 
+
 class Media():
     tile_content = '''
-        <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+        <div class="col-md-6 col-lg-4 movie-tile text-center"
+                data-trailer-youtube-id="{trailer_youtube_id}"
+                data-toggle="modal" data-target="#trailer">
             <img src="{poster_image_url}" width="220" height="342">
             <h2>{movie_title}</h2>
             <h3>Released: {release_date}</h3>
             <div>{body}</div>
         </div>
     '''
-    
+
     def __init__(self, title, description, image, trailer_url, release_date):
         self.title = title
         self.description = description
@@ -23,51 +26,52 @@ class Media():
             r'(?<=v=)[^&#]+', self.trailer_youtube_url)
         youtube_id_match = youtube_id_match or re.search(
             r'(?<=be/)[^&#]+', self.trailer_youtube_url)
-        return (youtube_id_match.group(0) if youtube_id_match
-                              else None)
-    
+        return (youtube_id_match.group(0) if youtube_id_match else None)
+
     # uses the tile content template to create a html div for the media object
     def getTileContent(self):
         trailer_youtube_id = self.getYouTubeId()
         description = self.getDescription()
         return Media.tile_content.format(
-            movie_title = self.title,
-            poster_image_url = self.poster_image_url,
-            trailer_youtube_id = trailer_youtube_id,
-            release_date = self.release_date,
-            body = description)
+            movie_title=self.title,
+            poster_image_url=self.poster_image_url,
+            trailer_youtube_id=trailer_youtube_id,
+            release_date=self.release_date,
+            body=description)
 
     # get the description of the media object
     def getDescription(self):
         return self.description
-            
+
+
 class Movie(Media):
-    def __init__(self, title, description, image, trailer_url, release_date, director):
-        Media.__init__(self, title, description, image, trailer_url, release_date)
+    def __init__(self, title, description, image,
+                 trailer_url, release_date, director):
+        Media.__init__(self, title, description,
+                       image, trailer_url, release_date)
         self.director = director
 
     def getDescription(self):
         return self.description + " Directed by " + self.director + "."
-       
+
 
 class VideoGame(Media):
-    def __init__(self, title, description, image, trailer_url, release_date, developer):
-        Media.__init__(self, title, description, image, trailer_url, release_date)
+    def __init__(self, title, description, image,
+                 trailer_url, release_date, developer):
+        Media.__init__(self, title, description,
+                       image, trailer_url, release_date)
         self.developer = developer
 
     def getDescription(self):
         return self.description + " Developed by " + self.developer + "."
-    
+
 
 class TelevisionShow(Media):
-    def __init__(self, title, description, image, trailer_url, release_date, network):
-        Media.__init__(self, title, description, image, trailer_url, release_date)
+    def __init__(self, title, description,
+                 image, trailer_url, release_date, network):
+        Media.__init__(self, title, description,
+                       image, trailer_url, release_date)
         self.network = network
 
     def getDescription(self):
         return self.description + " Aired on " + self.network + "."
-
-        
-
-
-        
